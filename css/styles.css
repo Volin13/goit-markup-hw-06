@@ -215,6 +215,7 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-button:hover,
 .button:hover {
   background-color: var(--active-button-color);
 }
@@ -247,7 +248,7 @@ img {
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 8px;
+  padding: 40px 39px;
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -270,6 +271,154 @@ img {
   top: 8px;
   right: 8px;
   cursor: pointer;
+  z-index: 1001;
+  transition-property: fill;
+  transition-duration:  250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.crosses-icon:hover,
+.crosses-icon:focus{
+  fill: var(--accent-color);
+}
+
+.modal-title{
+  display: block;
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.input-position{
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form-icon{
+  fill: var(--title-text-color);
+  position: absolute;
+  top: 36px;
+  left: 10px;
+
+  transition-property: fill;
+  transition-duration:  250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label{
+  font-size: 12px;
+  line-height: 1.17x;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+  margin-bottom: 4px;
+}
+
+.form-input:active + .form-icon,
+.form-input:active{
+  fill: var(--accent-color);
+}
+
+
+.form-input:active, 
+.form-input:focus{
+  border: 1px solid var(--accent-color);
+}
+
+.form-input:active + .form-icon,
+.form-input:not(:placeholder-shown) + .form-icon{
+  fill: var(--accent-color);
+}
+
+.form-input:focus-within + .form-icon{
+  fill: var(--accent-color);
+}
+
+.form-input{
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+
+  transition-property: border;
+  transition-duration:  250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea{
+  width: 448px;
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  margin-bottom: 20px;
+}
+
+.form-textarea::placeholder{
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+
+}
+
+.checkbox-flex{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.checkbox{
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  border: 1px solid var(--title-text-color);
+  border-radius: 4px;
+  /* position: relative; */
+   /* background-image: url(../images/check-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center; */
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-checkbox:checked + .checkbox{
+  background-color: var(--accent-color);
+  border: var(--accent-color);
+}
+
+.modal-button{
+  padding: 10px 52px;
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  margin: 30px auto 0 auto;
+
+  transition-property: background;
+  transition-duration:  250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-anchor{
+  text-decoration: underline;
+  color: var(--accent-color);
 }
 
 /* benefits */
@@ -380,8 +529,7 @@ img {
   cursor: pointer;
   fill: var(--icon-color);
 
-
-  transition-property: fill;
+  transition-property: fill, background;
   transition-duration:  250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -432,10 +580,7 @@ img {
   padding: 16px 32px;
   fill: var(--icon-color);
 
-  transition-property: fill;
-  transition-property: border;
-  transition-duration:  250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-area:hover,
@@ -450,6 +595,10 @@ img {
   background-color: var(--background-color-dark);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.adress-div{
+  padding-right: 24px;
 }
 
 .logo-bt-formattig {
@@ -480,7 +629,7 @@ img {
 
 .socmedia-tittle {
   font-size: 14px;
-  line-height: 1, 14;
+  line-height: 1,14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-white-color);
@@ -495,17 +644,77 @@ img {
   border-radius: 50px;
   cursor: pointer;
   fill: var(--primary-white-color);
+  background-color: rgba(255, 255, 255, 0.1);
 
   transition-property: background;
-  transition-property: fill;
   transition-duration:  250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.social-midea li:not(:last-of-type){
+  margin-right: 10px;
+}
+
 .footer-formatting {
   margin-left: 70px;
-  margin-top: 12px;
 }
+
+.footer-form{
+  margin-left: 93px;
+}
+
+.footer-input{
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--primary-white-color);
+  
+}
+
+.footer-input::placeholder{
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-button{
+  width: 200px;
+  height: 50px;
+  color: var(--primary-white-color);
+  fill: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  display: flex;
+  align-items: center;
+  margin-top: 44px;
+  margin-left: 12px;
+  cursor: pointer;
+
+  transition-property: background;
+  transition-duration:  250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-button:hover,
+.footer-button:focus{
+  background-color: var(--active-button-color);
+}
+
+.footer-btn{
+  margin-left: 10px;
+}
+
 
 /* portfolio */
 
@@ -647,6 +856,7 @@ img {
   justify-content: space-between;
 }
 
+.footer-form,
 .footer-flex,
 .social-midea {
   display: flex;
