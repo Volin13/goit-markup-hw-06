@@ -11,6 +11,7 @@
   --headre-border-color: #ececec;
   --nav-address-color: rgba(255, 255, 255, 0.6);
   --icon-color: #afb1b8;
+  --backdrop-color: #0000001a;
 }
 
 p,
@@ -228,7 +229,7 @@ img {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: #0000001a;
+  background-color: var(--backdrop-color);
 }
 
 .is-hidden {
