@@ -350,7 +350,7 @@ img {
   outline: none;
   cursor: pointer;
 
-  transition-property: border;
+  transition-property: fill, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -728,10 +728,7 @@ img {
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.08),
     0px 0px 0px rgba(0, 0, 0, 0.12);
 
-  transition-property: box-shadow;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item-box {
